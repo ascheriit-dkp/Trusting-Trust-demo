@@ -46,7 +46,7 @@ Computers are very obedient. The problem is occasionally figuring out who they w
 If your next thought is "okay, but where is the code for gcc?", congratulations on finding the exact thing this repo is not providing.  
 If you've got enough time to build it, feel free to send it my way. I will, of course, review it very carefully under the extremely serious pretense of trusting-trust research purposes.
 
-The full idea comes from Ken Thompson's 1984 paper, [**Reflections on Trusting Trust**](https://doi.org/10.1145/358198.358210). Give it a read, there is some genuinely fun stuff hiding in there.
+The full idea comes from Ken Thompson's 1984 paper, [**Reflections on Trusting Trust**](https://css.csail.mit.edu/6.5660/2024/readings/trusting-trust.pdf). Give it a read, there is some genuinely fun stuff hiding in there.
 
 Anyway, have fun. Trust nothing. Or maybe just keep trusting things the way you always have. That has historically gone great.
 
