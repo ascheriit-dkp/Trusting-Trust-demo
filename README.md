@@ -1,36 +1,35 @@
 # Trusting Trust
 
-Tiny implementation of Ken Thompson's [**Reflections on Trusting Trust**](https://doi.org/10.1145/358198.358210).
+A tiny toy implementation of Ken Thompson's compiler trick.
 
-The idea is simple enough:
+Basically : the source code of both the target and the compiler can look completely clean while the resulting binaries are still infected.  
+Which is a very comforting thing to remember about software supply chains.
+
+This does not touch GCC, PAM, `/bin/login`, `/usr/bin/*`, or anything else you might regret breaking five minutes before a demo.  
+No sudo, no root, no bricked Debian install. Tragically responsible stuff.
+
+The idea is simple enough :
 
 ```text
 clean source + infected compiler = infected binary
-```
-
-Slightly more annoying:
-
-```text
 clean compiler source + infected compiler = infected compiler
 ```
 
-Put both together and you can end up with:
+Put both together and you end up with :
 
 ```text
-clean program source
-        +
-clean compiler source
-        +
-previously infected compiler binary
-        ↓
-infected compiler
-        ↓
-infected program
+compiler              infected
+program               infected
 ```
 
-So the program source is clean, the compiler source is clean, and the resulting binary is still infected.
+While both :
 
-Very reassuring.
+```text
+compiler.clean.src    clean
+hello.src             clean
+```
+
+Which is fun.
 
 ## Files
 
@@ -44,38 +43,14 @@ Very reassuring.
 
 `demo.sh` : runs the entire chain inside `.demo/`.
 
-## Run it
+Computers are very obedient. The problem is occasionally figuring out who they were obedient to.  
+Spoiler : probably not you.
 
-```bash
-./demo.sh
-```
+If your next thought is *"okay, but what if I do this to **`/usr/bin/gcc`**?"*, congratulations on finding the exact thing this repo is not providing.  
+If you've got enough time to build your own version though, feel free to send it my way. I will, of course, review it very carefully under the extremely serious pretense of trusting-trust research purposes.
 
-The interesting part:
+The full idea comes from Ken Thompson's 1984 paper, [**Reflections on Trusting Trust**](https://doi.org/10.1145/358198.358210). Give it a read, there is some genuinely fun stuff hiding in there.
 
-```text
-compiler.evil.src
-        ↓
-compiler-infected
-        |
-        | compiles compiler.clean.src
-        ↓
-compiler-rebuilt
-        |
-        | compiles hello.src
-        ↓
-infected program
-```
+Anyway, have fun. Trust nothing. Or maybe just keep trusting things the way you always have. That has historically gone great.
 
-While:
-
-```text
-compiler.clean.src    clean
-hello.src             clean
-```
-
-The infection survives through the compiler binary rather than the source being inspected.
-
-Source review went great.
-
-Anyway, have fun.
-Maybe don't trust the compiler.
+PS : I didn't invent shit, like always, so don't be surprised or whine about it.
