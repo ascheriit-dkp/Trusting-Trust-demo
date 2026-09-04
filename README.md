@@ -41,8 +41,7 @@ Which is fun.
 
 </details>
 
-Computers are very obedient. The problem is occasionally figuring out who they were obedient to.  
-Spoiler : probably not you.
+Computers are very obedient. The problem is occasionally figuring out who they were obedient to 👀.  
 
 If your next thought is "okay, but where is the code for gcc?", congratulations on finding the exact thing this repo is not providing.  
 If you've got enough time to build it, feel free to send it my way. I will, of course, review it very carefully under the extremely serious pretense of trusting-trust research purposes.
