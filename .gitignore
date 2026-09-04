@@ -1,25 +1,19 @@
-.env
-.env.*
-!.env.example
+# demo output
+.demo/
+compiler-clean
+compiler-infected
+compiler-rebuilt*
+hello-clean
+hello-infected
+hello-rebuilt*
 
-*.key
-*.pem
-*.p12
-*.pfx
-
+# python doing python things
 __pycache__/
-.pytest_cache/
-.venv
+*.py[cod]
+.venv/
 venv/
 
-node_modules/
-dist/
-build/
-
+# editor / OS confetti
 .DS_Store
 .idea/
 .vscode/
-
-logs/
-data/raw/
-secrets/
